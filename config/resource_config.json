@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Unobtainium",
+    "rarity": 0,
+    "mining_energy": 1,
+    "mining_time": 100,
+    "max_chunk": 10
+  },
+  {
+    "name": "Adamantite",
+    "rarity": 0,
+    "mining_energy": 1,
+    "mining_time": 100,
+    "max_chunk": 10
+  }
+]

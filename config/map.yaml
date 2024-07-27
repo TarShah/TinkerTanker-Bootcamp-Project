@@ -1,0 +1,13 @@
+map_name: "First Test Map"
+map_size: [10, 12]
+
+resources:
+  copper:
+    name: "Copper"
+    rarity: 20
+  iron:
+    name: "Iron"
+    rarity: "50"
+
+scan_width: 5
+tick_duration_ms: 256

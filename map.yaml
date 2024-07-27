@@ -1,0 +1,25 @@
+map_name: "First Test Map"
+map_size: [10, 10]
+
+resources:
+  copper:
+    name: "Copper"
+    rarity: 30
+  iron:
+    name: "Iron"
+    rarity: 10
+  mercury:
+    name: "Mercury"
+    rarity: 5
+  adamantine:
+    name: "Adamantine"
+    rarity: 5
+  uranium:
+    name: "Uranium"
+    rarity: 20
+  silver:
+    name: "Silver"
+    rarity: 5
+
+scan_width: 5
+tick_duration_ms: 256

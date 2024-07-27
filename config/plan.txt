@@ -1,0 +1,149 @@
+
+Map
+  MaxX
+  MaxY
+  ScanWidth
+  TickDuration
+  EnergyPerTickFactor
+  RiverFrequency
+  RiverMinLength
+  RiverMaxLength
+  RiverTurnFrequency
+  MountainFrequency
+  MinMountainArea
+  MaxMountainArea
+  PlayerMaxBasicBots
+  PlayerMaxMobileForts
+  NumberOfResources
+    ResourceId
+    Rarity
+    EnergyToMinePerTick
+    AmountMinedPerTick
+  
+Land
+  Id
+  Coord
+  TerrainId
+  NumberOfResources
+    ResourceLoads
+  NumberOfMachines
+  Machines
+    MachineId
+    CurrentJobId
+
+Position
+  X
+  Y
+
+ResourceLoad
+  ResourceId
+  Amount
+
+Terrain
+  Id
+  Name
+  TravelTime
+  TravelEnergy
+
+Action
+
+Job
+  MachineId
+  ActionId
+  TargetCoord
+  TargetType
+  TargetId
+
+
+Bot
+  Status
+  Id
+  Variant (MiningBot, FactoryBot)
+  Energy
+  CurrentJob
+  NumberOfResources
+    ResourceLoads
+
+Variant
+  Id
+  CarryingCapacity
+  EnergyCapacity
+  EnergyRechargePerTick
+  EmptyWeight
+  ValidActionIds<ActionId>
+
+Player
+
+Game
+  vector<Player> players
+  vector<vector<Land>> map
+  string Name
+  GameId
+  kMaxPlayers
+  kTimeLimit
+  vector<ResourceLoad> win_quota
+
+Player
+  SessionId
+  vector<Bot>
+  
+StartGame
+JoinGame
+EndGame
+
+Player Request/Response
+  GetOpenGames
+  JoinGame
+    Request
+      GameId
+      PlayerName
+      PlayerKey
+    Response
+      PlayerSessionId
+      MapConfig
+  Move
+    Request
+      long PlayerSessionId
+      Id BotId
+      Position Destination
+
+---
+
+  Scan
+    Request
+      long PlayerSessionId
+      Id BotId      
+
+  Mine
+    Request
+      long PlayerSessionId
+      Id BotId
+      Position Destination
+
+  Transfer
+    Request
+      long PlayerSessionId
+      Id BotId
+      Position Destination
+      Id TargetId
+
+
+wss updates
+
+  vector<BotUpdate>
+  vector<ScanUpdate>
+  MineUpdate
+
+
+view games (get game id)
+join games (send player key, game id) (get player id)
+subscribe websocket (send game id, player id) (receive stream of Updates)
+
+send requests
+  Move
+  Scan
+  Mine
+  Transfer
+  BuildBot
+  Explode
+  CancelJob
